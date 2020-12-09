@@ -1,5 +1,5 @@
 <?php
-
+	
 	if (isset($_POST["acao"])){
 		if ($_POST["acao"]=="inserir") {
 			inserirPessoa();
@@ -12,30 +12,39 @@
 		if ($_POST["acao"]=="alterar") {
 			alterarPessoa();
 		}
+		
+		if ($_POST["acao"]=="home") {
+			voltarIndex();
+		}
 	}
 	
 	function inserirPessoa(){
 		$banco = new mysqli("localhost", "root", "", "loja");
 		$sql = "INSERT INTO pessoavirtual(tipoPessoa, nome, sobrenome, sexo, documento, telefone,
 		celular, nascimento, cep, rua, numero, complemento, referencia, bairro, cidade, estado) 
-		VALUES ('{$_POST["tipoPessoa"]}', '{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}',
+		VALUES( '{$_POST["tipoPessoa"]}', '{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}',
 		'{$_POST["documento"]}',  '{$_POST["telefone"]}', '{$_POST["celular"]}',  '{$_POST["nascimento"]}',
 		'{$_POST["cep"]}',		  '{$_POST["rua"]}',	  '{$_POST["numero"]}',   '{$_POST["complemento"]}',
 		'{$_POST["referencia"]}', '{$_POST["bairro"]}',   '{$_POST["cidade"]}',   '{$_POST["estado"]}')";
 		$banco->query($sql);
 		$banco->close();
+		voltarIndex();
 	}
 	
 	function alterarPessoa(){
 		$banco = new mysqli("localhost", "root", "","loja");
-		$sql = "UPDATE pessoavirtual SET nome='{$_POST["nome"]}', nascimento='{$_POST["nascimento"]}',
-		endereco='{$_POST["endereco"]}', telefone='{$_POST["telefone"]}' WHERE id='{$_POST["id"]}'";
+		$sql = "UPDATE pessoavirtual SET tipoPessoa='{$_POST["tipoPessoa"]}', nome='{$_POST["nome"]}', sobrenome='{$_POST["sobrenome"]}', sexo='{$_POST["sexo"]}' ,
+		documento='{$_POST["documento"]}', telefone='{$_POST["telefone"]}', celular='{$_POST["celular"]}', nascimento='{$_POST["nascimento"]}', 
+		cep='{$_POST["cep"]}', rua='{$_POST["rua"]}', numero='{$_POST["numero"]}', complemento='{$_POST["complemento"]}',
+		referencia='{$_POST["referencia"]}', bairro='{$_POST["bairro"]}', cidade='{$_POST["cidade"]}', estado='{$_POST["estado"]}'
+		WHERE id='{$_POST["id"]}'";
+		
 		$banco->query($sql);
 		$banco->close();
 		voltarIndex();
 	}
 	
-		function excluirPessoa(){
+	function excluirPessoa(){
 		$banco = new mysqli("localhost", "root", "","loja");
 		$sql = "DELETE FROM pessoavirtual WHERE id='{$_POST["id"]}'";
 		$banco->query($sql);
@@ -58,8 +67,8 @@
 		$banco = new mysqli("localhost", "root", "", "loja");
 		$sql = "SELECT * FROM pessoavirtual WHERE id='{$_POST["id"]}'";
 		$resultadoQuery = $banco->query($sql);
-		$pessoas = mysqli_fetch_assoc($resultadoQuery);
-		return $pessoas;
+		$pessoavirtual = mysqli_fetch_assoc($resultadoQuery);
+		return $pessoavirtual;
 	}
 	
 	

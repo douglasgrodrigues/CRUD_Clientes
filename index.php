@@ -37,6 +37,7 @@
 		  <th scope="col">Sexo</th>
 		  <th scope="col"></th>
 		  <th scope="col"></th> 
+		  <th scope="col"></th>	
 		  <th scope="col"></th>
 		</tr>
 	  </thead>
@@ -48,20 +49,7 @@
 					<td><?=$pessoavirtual["nome"]?></td>
 					<td><?=$pessoavirtual["sobrenome"]?></td>
 					<td><?=$pessoavirtual["sexo"]?></td>
-					<!--
-					<td><?=$pessoavirtual["documento"]?></td>
-					<td><?=$pessoavirtual["telefone"]?></td>
-					<td><?=$pessoavirtual["celular"]?></td>
-					<td><?=$pessoavirtual["nascimento"]?></td>
-					<td><?=$pessoavirtual["cep"]?></td>
-					<td><?=$pessoavirtual["rua"]?></td>
-					<td><?=$pessoavirtual["numero"]?></td>
-					<td><?=$pessoavirtual["complemento"]?></td>
-					<td><?=$pessoavirtual["referencia"]?></td>
-					<td><?=$pessoavirtual["bairro"]?></td>
-					<td><?=$pessoavirtual["cidade"]?></td>
-					<td><?=$pessoavirtual["estado"]?></td>
-					-->				
+					<td><?=$pessoavirtual["telefone"]?></td>			
 					<td>
 						<form name="visualizar" method="POST" action="visualizar.php">
 								<input type="hidden" name="id" value="<?=$pessoavirtual["id"]?>" />

@@ -4,7 +4,6 @@
 <!------ Include the above in your HEAD tag ---------->
 
 
-
 <!DOCTYPE html>
 <head>
 	
@@ -35,12 +34,12 @@
 							<label class="form-group" for="radios"></label>
 							<div class="col-md-4"> 
 								<label required="" class="radio-inline" for="radios-0" >
-									<input name="tipoPessoa" id="tipoPessoa" value="f" type="radio" required>
+									<input name="tipoPessoa" id="tipoPessoa" value="pf" type="radio" required>
 									Pessoa física
 								</label> 
 								
 								<label class="radio-inline" for="radios-1">
-									<input name="tipoPessoa" id="tipoPessoa" value="j" type="radio">
+									<input name="tipoPessoa" id="tipoPessoa" value="pj" type="radio">
 									Pessoa Jurídica
 								</label>
 							</div>
@@ -75,8 +74,7 @@
 							<div class="col-md-2">
 								<input id="nascimento" name="nascimento" class="form-control input-md" required="" type="date">
 							</div>
-							
-							
+				
 							<label class="form-group" for="radios"></label>
 							<div class="col-md-4">
 								<label required="" class="radio-inline" for="radios-0" >
@@ -98,8 +96,7 @@
 							
 							<label class="col-md-1 control-label" for="Nome">Rua </label>  
 							<div class="col-md-2">
-								<input id="rua" name="rua" class="form-control input-md" required="" type="text">
-								
+								<input id="rua" name="rua" class="form-control input-md" required="" type="text">							
 							</div>
 												
 							<label class="col-md-1 control-label" for="Nome">Nº	</label>  
@@ -108,8 +105,7 @@
 								
 							</div>
 						</div>
-								
-						
+			
 						<div class="form-group">
 							<label class="col-md-2 control-label" for="Nome">Complemento </label>  
 							<div class="col-md-2">
@@ -121,16 +117,13 @@
 								<input id="referencia" name="referencia" class="form-control input-md" required="" type="text">
 								
 							</div>
-							
-							
+								
 							<label class="col-md-1 control-label" for="Nome">Bairro	</label>  
 							<div class="col-md-2">
-								<input id="bairro" name="bairro" class="form-control input-md" required="" type="text">
-								
+								<input id="bairro" name="bairro" class="form-control input-md" required="" type="text">			
 							</div>
 						</div>
-						
-						
+
 						<div class="form-group">
 							<label class="col-md-2 control-label" for="Nome">Cidade</label>  
 							<div class="col-md-2">
@@ -152,9 +145,11 @@
 							<label class="col-md-2 control-label" for="Cadastrar"></label>
 							<div class="col-md-8">
 								<input type="hidden" name="acao" value="inserir"/>
+								<input type="hidden" name="home" value="home"/>
 					
-								<button id="Cadastrar" name="Enviar" class="btn btn-success" value="Enviar" type="submit">Enviar</button>
+								<button id="Cadastrar" name="Enviar" class="btn btn-success" value="Enviar" type="submit">Cadastrar</button>
 								<button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Limpar</button>
+								<button type="button" value="Voltar" onClick="history.go(-1)" class="btn btn-danger">Voltar</button>						
 							</div>
 						</div>
 						
